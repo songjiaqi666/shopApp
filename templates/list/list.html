@@ -1,0 +1,25 @@
+<ion-view hide-nav-bar="true">
+    <!--ionHeader 头部区域-->
+    <ion-header-bar class="bar-energized item-input-inset">
+        <button style="margin-right:2%; color: #ffffff;" class="button button-dark button-clear icon ion-ios-arrow-left" ng-click="goBack()"></button>
+        <label class="item-input-wrapper border-radius-20 bg-white">
+            <input type="search" placeholder="纪念日">
+            <button class="button button-clear button-icon ion-ios-search button-assertive"> </button>
+        </label>
+    </ion-header-bar>
+<!--ionContent 内容区域-->
+<ion-content id="list">
+    <ul>
+
+        <li ng-repeat="product in products">
+            <a href="#/tabs/content?id={{product.id}}">
+            <img ng-src="{{product.imgsrc}}"/>
+            <div class="price">¥{{product.price}}</div>
+            <p>{{product.title}}</p>
+            <span>{{product.collect}}人收藏</span>
+            </a>
+            </li>
+
+    </ul>
+</ion-content>
+</ion-view>

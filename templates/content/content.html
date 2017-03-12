@@ -1,0 +1,116 @@
+<ion-view hide-nav-bar="true">
+    <!--ionHeader 头部区域-->
+    <ion-header-bar class="bar-energized item-input-inset">
+        <button style="margin-right:2%; color: #ffffff;" class="button button-dark button-clear icon ion-ios-arrow-left" ng-click="goBack()"></button>
+        <div class="title">宝贝详情</div>
+        <button class="button button-icon ion-ios-cart color_g" ui-sref="tabs.cart"></button>
+    </ion-header-bar>
+    <!--ionContent 内容区域-->
+
+    <ion-content id="content">
+        <!--幻灯片效果-->
+        <div class="c_title">
+            <ion-slide-box does-continue="true" auto-play="true" slide-interval="2000">
+                <ion-slide>
+                    <div class="box"><img ng-src="{{product.imgsrc}}"/> </div>
+                </ion-slide>
+            </ion-slide-box>
+            <div class="c_cont">
+                <h4>{{product.title}}</h4>
+                <b>￥{{product.price}}</b>
+                <p>{{product.desc}}</p>
+            </div>
+        </div>
+
+        <div class="list c_list">
+            <div class="item item-button-right">
+                <div>
+                    <i class="buttom button-icon icon ion-ios-personadd-outline color_g"></i>
+                    <p>众筹</p>
+                </div>
+
+                <a >
+                    <img src="images/h-1.jpg"/>
+                </a>
+                <a >
+                    <img src="images/h-2.jpg"/>
+                </a>
+                <a >
+                    <img src="images/h-3.jpg"/>
+                </a>
+                <a >
+                    <img src="images/h-4.jpg"/>
+                </a>
+                <button class="button button-icon icon ion-ios-arrow-right mt_5 color_l"></button>
+            </div>
+            <div class="item item-button-right">
+                <div>
+                    <i class="buttom button-icon icon ion-android-favorite-outline color_c"></i>
+                    <p>众筹</p>
+                </div>
+                <a >
+                    <img src="images/h-5.jpg"/>
+                </a>
+                <a >
+                    <img src="images/h-6.jpg"/>
+                </a>
+                <a >
+                    <img src="images/h-7.jpg"/>
+                </a>
+
+                <button class="button button-icon icon ion-ios-arrow-right mt_5 color_l"></button>
+            </div>
+        </div>
+
+        <div class="c_cont">
+            <ul class="clearfix">
+                <li class="ac">图文介绍</li>
+                <li>评价（123条）</li>
+            </ul>
+            <div class="tabCount">
+                <div class="tabItem">
+                这里是图文介绍页面
+                    <img ng-src="{{product.imgsrc}}"/>
+                </div>
+                <div class="tabItem">
+                    <div class="card">
+                        <div class="item item-avatar bor_b">
+                            <img src="images/TB1_100x100.jpg">
+                            <h2>小明</h2>
+                            <p>2016-11-12</p>
+                        </div>
+                        <div class="txt">谢谢大家捧场谢谢大家捧场谢谢大家捧场谢谢大家捧场谢谢大家捧场谢谢大家捧场谢谢大家捧场谢谢大家捧场谢谢大家捧场</div>
+                        <div class="row item-body">
+
+                            <div class="col col-33"><img src="images/4.jpg"/> </div>
+                            <div class="col col-33"><img src="images/4.jpg"/> </div>
+                            <div class="col col-33"><img src="images/4.jpg"/> </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="item item-avatar bor_b">
+                            <img src="images/TB1_100x100.jpg">
+                            <h2>小明</h2>
+                            <p>2016-11-12</p>
+                        </div>
+                        <div class="txt">谢谢大家捧场谢谢大家捧场谢谢大家捧场谢谢大家捧场谢谢大家捧场谢谢大家捧场谢谢大家捧场谢谢大家捧场谢谢大家捧场</div>
+                        <div class="row item-body">
+                            <div class="col col-33"><img src="images/4.jpg"/> </div>
+                            <div class="col col-33"><img src="images/4.jpg"/> </div>
+                            <div class="col col-33"><img src="images/4.jpg"/> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+    <!--ionFooter 页脚区域-->
+    <ion-footer-bar class="bar bar-footer bg-f4 c_footer pd-0">
+        <div class="col col-33">
+            <button class="button button-icon icon ion-android-favorite-outline"></button>
+            <button class="button button-icon icon ion-ios-shuffle"></button>
+        </div>
+        <button class="col col-33 bg-ee color-white">立即购买</button>
+        <button class="col col-33 bg-b7 color-white" ng-click="add(product)">加入购物车</button>
+    </ion-footer-bar>
+</ion-view>

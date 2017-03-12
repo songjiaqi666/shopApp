@@ -1,0 +1,27 @@
+<ion-view hide-nav-bar="true">
+    <!--ionHeader 头部区域-->
+    <ion-header-bar class="bar-energized item-input-inset">
+        <div class="title">购物车</div>
+    </ion-header-bar>
+    <!--ionContent 内容区域-->
+
+    <ion-content id="content">
+        <div class="item item-thumbnail-left" style="position: relative;" ng-repeat="item in cart" >
+            <img ng-src="{{item.product.imgsrc}}">
+            <h2>{{item.product.title}}</h2>
+            <p>{{item.product.desc}}</p>
+            <span class="button-assertive c_red">{{item.product.price | currency:"￥"}}<i class="f_right color_n">x{{item.number}}</i> </span>
+            <button style="position: absolute; right: 0; top:-12px;" ng-click="remove(item.product.title)" class="button button-icon icon ion-ios-close-empty"></button>
+        </div>
+
+    </ion-content>
+    <!--ionFooter 页脚区域-->
+    <ion-footer-bar class="bar bar-footer bg-f4 c_footer pd-0">
+        <div class="col col-25"></div>
+        <div class="col col-50">
+            合计：<b class="c_red">{{money() | currency:"￥"}}</b><span class="color_l">（不含运费）</span>
+        </div>
+
+        <div class="col col-25  bg-red color-white">结算（{{total()}}）</div>
+    </ion-footer-bar>
+</ion-view>

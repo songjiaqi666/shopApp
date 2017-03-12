@@ -1,0 +1,87 @@
+/**
+ * Created by hxsd on 2017/1/18.
+ */
+myapp.controller('contentCtrl',function($scope,$ionicHistory,$stateParams,shopCart){
+
+    $scope.goBack = function() {
+        $ionicHistory.goBack();
+    };
+
+    $('#content .tabItem').eq(0).show();
+    $('#content').find('li').each(function(index){
+        $(this).on('click',function(){
+            $('#content').find('li').removeClass('ac').eq(index).addClass('ac');
+            $('#content .tabItem').hide().eq(index).show();
+        })
+    });
+
+
+    // 准备商品数据
+    $scope.products = [
+        {
+            "id": "1",
+            "title": "青凤凰",
+            "desc": "萌萌哒的多肉植物总是容易受到喜爱，不过多肉品种太多，有时候分不清种类，错过了最好的种植方法。",
+            "price": "135",
+            "collect": "93",
+            "imgsrc": "images/01.jpg"
+        },
+        {
+            "id": "2",
+            "title": "仙女杯",
+            "desc": "仙女杯（Dudleya brittonii），为景天科、仙女杯属多肉植物，观赏价值较高。原产墨西哥及美国，现世界多地可栽培。繁殖采用播种与砍头，也可以取侧芽扦插。右图为其中一个品种，名为初霜。",
+            "price": "25",
+            "collect": "563",
+            "imgsrc": "images/02.jpg"
+        },
+        {
+            "id": "3",
+            "title": "黑法师原始种",
+            "desc": "”黑法师 [1]  “（Aeonium arboreum 'Atropureum'）是景天科莲花掌属多肉植物（草本植物），为莲花掌的栽培品种，自然界不存在分布。",
+            "price": "59",
+            "collect": "143",
+            "imgsrc": "images/03.jpg"
+        },
+        {
+            "id": "4",
+            "title": "黑兔耳",
+            "desc": "黑兔耳，景天科、伽蓝菜属多肉植物（多浆植物），别名巧克力兔耳，原产中美洲干燥地区。",
+            "price": "78",
+            "collect": "323",
+            "imgsrc": "images/04.jpg"
+        },
+        {
+            "id": "5",
+            "title": "玉吊钟/蝴蝶之舞",
+            "desc": "玉吊钟[1]  （Kalanchoe fedtschenkoi 'Rosy Dawn' ），景天科、伽蓝菜属的多肉植物、也称多浆植物，别名洋吊钟。",
+            "price": "42",
+            "collect": "432",
+            "imgsrc": "images/05.jpg"
+        },
+        {
+            "id": "6",
+            "title": "兰黛莲",
+            "desc": "蓝黛莲（Pachyveria ‘Glauca’），景天科厚叶草属植物。叶片呈略扁的圆柱形，排列成莲座状；颜色为灰绿色，表面覆盖的天然霜粉使其增添了些许灰蓝色的淡雅色调，阳光晒后叶尖变为红色。",
+            "price": "36",
+            "collect": "256",
+            "imgsrc": "images/06.jpg"
+        }
+    ];
+
+    // 解析参数，查找匹配商品显示
+    $scope.product = {};
+    angular.forEach($scope.products,function(product,index){
+        if(product.id == $stateParams.id){
+            $scope.product = product;
+            return;
+        }
+        console.log("#" + index);
+    });
+
+    // 响应加入购物车代码
+    $scope.add = function(product){
+        shopCart.add(product);
+    };
+
+
+});

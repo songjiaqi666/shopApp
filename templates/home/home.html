@@ -1,0 +1,64 @@
+<ion-view hide-nav-bar="true" hide-back-button="true" >
+    <!--头部区域-->
+    <ion-header-bar class="bar-energized icon-right">
+        <div class="title">首页</div>
+        <!--<a class="button button-icon ion-ios-search" href="/search" ></a>-->
+    </ion-header-bar>
+    <!--内容区域-->
+    <ion-content>
+        <!--幻灯片效果-->
+        <div class="card">
+            <ion-slide-box does-continue="true" auto-play="true" slide-interval="2000">
+                <ion-slide>
+                    <div class="box"><img src="images/banner_index_1.jpeg"> </div>
+                </ion-slide>
+                <ion-slide>
+                    <div class="box"><img src="images/banner_index_2.jpeg"> </div>
+                </ion-slide>
+                <ion-slide>
+                    <div class="box"><img src="images/banner_index_3.jpeg"> </div>
+                </ion-slide>
+            </ion-slide-box>
+        </div>
+
+        <!--内容栅格栏-->
+        <div class="give clearfix">
+            <div class="birthday">
+                <div class="top"><i class="icon ion-android-restaurant"></i>
+                    <p>王小艺还有<b>3</b>天过生日</p>
+                </div>
+                <div class="bottom"> <a class="ac">去挑选礼物</a> <a class="">他的心愿单</a> </div>
+            </div>
+            <ul class="cata">
+                <li class="she" ui-sref="tabs.classify"><i class="icon ion-transgender"></i>
+                    <p>送她\他</p>
+                </li>
+                <li class="he" ui-sref="tabs.classify"><i class="icon ion-beer"></i>
+                    <p>送基友</p>
+                </li>
+                <li class="fimally" ui-sref="tabs.classify"><i class="icon ion-ios-people"></i>
+                    <p>送家人</p>
+                </li>
+                <li class="bosom" ui-sref="tabs.classify"><i class="icon ion-ios-recording"></i>
+                    <p>送闺蜜</p>
+                </li>
+            </ul>
+        </div>
+        <!--专题推荐-->
+        <div class="card recommend">
+            <h2>最近许愿</h2>
+            <a ui-sref="tabs.wish">查看更多<i class="icon ion-ios-arrow-right"></i></a> </div>
+<!--内容加载区域-->
+
+        <div class="list card"  ng-repeat="wish in wishs.coming">
+            <div class="item item-avatar"> <img ng-src="{{wish.headimgsrc}}">
+                <h2>{{wish.name}}</h2>
+                <p>{{wish.birthday}}</p>
+            </div>
+            <div class="item item-body"> <img class="full-image" ng-src="{{wish.imgsrc}}">
+                <p>{{wish.desc}}</p>
+            </div>
+        </div>
+
+    </ion-content>
+</ion-view>

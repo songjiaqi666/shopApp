@@ -1,0 +1,61 @@
+
+<ion-view hide-nav-bar="true">
+    <!--ionHeader 头部区域-->
+    <ion-header-bar class="bar-energized item-input-inset">
+        <div class="title">心愿</div>
+    </ion-header-bar>
+    <!--ionContent 内容区域-->
+    <ion-content id="wish">
+            <ul class="tabTitle clearfix">
+                <li class="ac">已经完成</li>
+                <li>即将完成</li>
+                <li>尚未完成</li>
+            </ul>
+            <div class="tabCont">
+                <div class="tabItem">
+                    <div class="list card mb_30" ng-repeat="wish in wishs.finish">
+                        <div class="item item-avatar item-button-right"> <img ng-src="{{wish.headimgsrc}}">
+                            <h2>{{wish.name}}</h2>
+                            <p>{{wish.birthday}}</p>
+                            <button class="button mt_10 button-energized">我也筹</button>
+                        </div>
+                        <div class="item item-thumbnail-left"> <img ng-src="{{wish.imgsrc}}">
+                            <h2>{{wish.title}}</h2>
+                            <p>{{wish.desc}}</p>
+                            <span class="button-assertive c_red">￥{{wish.price}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="tabItem">
+
+                    <div class="list card mb_30" ng-repeat="wish in wishs.coming">
+                        <div class="item item-avatar item-button-right"> <img ng-src="{{wish.headimgsrc}}">
+                            <h2>{{wish.name}}</h2>
+                            <p>{{wish.birthday}}</p>
+                            <button class="button mt_10 button-energized ">去实现</button>
+                        </div>
+                        <div class="item item-thumbnail-left"> <img ng-src="{{wish.imgsrc}}">
+                            <h2>{{wish.title}}</h2>
+                            <p>{{wish.desc}}</p>
+                            <span class="button-assertive c_red">￥{{wish.price}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="tabItem">
+                    <div class="list card mb_30" ng-repeat="wish in wishs.nothing">
+                        <div class="item item-avatar item-button-right"> <img ng-src="{{wish.headimgsrc}}">
+                            <h2>{{wish.name}}</h2>
+                            <p>{{wish.birthday}}</p>
+                            <button class="button mt_10 button-energized ">去实现</button>
+                        </div>
+                        <div class="item item-thumbnail-left"> <img ng-src="{{wish.imgsrc}}">
+                            <h2>{{wish.title}}</h2>
+                            <p>{{wish.desc}}</p>
+                            <span class="button-assertive c_red">￥{{wish.price}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </ion-content>
+</ion-view>
+
